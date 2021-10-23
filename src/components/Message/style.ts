@@ -1,6 +1,7 @@
+import { MotiView } from 'moti';
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled(MotiView)`
   width: 100%;
   margin-bottom: 36px;
 `;

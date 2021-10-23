@@ -19,7 +19,11 @@ export interface IMessageProps {
 
 export default function Message({ message }: IMessageProps) {
   return (
-    <Container>
+    <Container
+      from={{ opacity: 0, translateY: -50 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{ type: 'timing', duration: 700 }}
+    >
       <MessageText>
         {message.text}
       </MessageText>
