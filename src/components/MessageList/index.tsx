@@ -1,24 +1,27 @@
-import React from 'react';
-import Message from '../Message';
+import React, { useEffect, useState } from 'react';
+import MessageService from '../../services/MessageService';
+import Message, { IMessageProps } from '../Message';
 
 import { styles, Container } from './style';
 
 export default function MessageList() {
-  const message = {
-    id: '1',
-    text: 'Muito ansioso pelo DoWhile 2021 🔥 🔥 🔥 ',
-    user: {
-      name: 'Amauri Lima',
-      avatar_url: 'https://github.com/AmauriLima.png',
-    },
-  };
+  const [currentMessages, setCurrentMessage] = useState<IMessageProps[]>();
+
+  useEffect(() => {
+    (async () => {
+      const messages = await MessageService.fetchMessages();
+      setCurrentMessage(messages);
+    })();
+  }, []);
 
   return (
     <Container
       contentContainerStyle={styles.content}
       keyboardShouldPersistTaps="never"
     >
-      <Message message={message} />
+      {currentMessages?.map((message) => (
+        <Message key={message.id} id={message.id} text={message.text} user={message.user} />
+      ))}
     </Container>
   );
 }

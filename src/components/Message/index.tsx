@@ -7,17 +7,15 @@ import {
 } from './style';
 
 export interface IMessageProps {
-  message: {
-    id: string,
-    text: string,
-    user: {
-      name: string,
-      avatar_url: string,
-    }
+  id: string,
+  text: string,
+  user: {
+    name: string,
+    avatar_url: string,
   }
 }
 
-export default function Message({ message }: IMessageProps) {
+export default function Message(message: IMessageProps) {
   return (
     <Container
       from={{ opacity: 0, translateY: -50 }}
