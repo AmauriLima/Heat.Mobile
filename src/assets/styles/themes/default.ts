@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 export default {
   fonts: {
     regular: 'Roboto_400Regular',
-    bold: 'Roboto_700Regular',
+    bold: 'Roboto_700Bold',
   },
   colors: {
     gray: {
