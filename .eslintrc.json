@@ -29,6 +29,7 @@
     "no-use-before-define": "off",
     "camelcase": "off",
     "react/style-prop-object": "off",
-    "func-names": "off"
+    "func-names": "off",
+    "react/require-default-props": "off"
   }
 }

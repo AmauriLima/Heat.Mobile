@@ -1,17 +1,23 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
 import LogoSvg from '../../assets/images/logo.svg';
 
-import { Container, LogoutText } from './style';
+import UserImage from '../UserImage';
+import { Container, LogoutButton, LogoutText } from './style';
 
-function Header() {
+export default function Header() {
   return (
     <Container>
       <LogoSvg />
 
-      <LogoutText>Sair</LogoutText>
+      <LogoutButton>
+        <TouchableOpacity>
+          <LogoutText>Sair</LogoutText>
+        </TouchableOpacity>
+
+        <UserImage imageUri="https://github.com/AmauriLima.png" />
+      </LogoutButton>
     </Container>
   );
 }
-
-export default Header;
