@@ -28,6 +28,7 @@
     "import/prefer-default-export": "off",
     "no-use-before-define": "off",
     "camelcase": "off",
-    "react/style-prop-object": "off"
+    "react/style-prop-object": "off",
+    "func-names": "off"
   }
 }
