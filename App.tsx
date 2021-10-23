@@ -11,6 +11,7 @@ import { StatusBar } from 'expo-status-bar';
 import defaultTheme from './src/assets/styles/themes/default';
 
 import { Home } from './src/screens';
+import { AuthProvider } from './src/contexts/AuthContext';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -23,9 +24,15 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <StatusBar style="light" />
-      <Home />
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <StatusBar
+          style="light"
+          translucent
+          backgroundColor="transparent"
+        />
+        <Home />
+      </ThemeProvider>
+    </AuthProvider>
   );
 }

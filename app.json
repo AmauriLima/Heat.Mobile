@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "DoWhile",
-    "slug": "DoWhile",
+    "name": "doWhile",
+    "slug": "doWhile",
     "version": "1.0.0",
+    "scheme": "doWhile",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

@@ -31,6 +31,8 @@
     "react/style-prop-object": "off",
     "func-names": "off",
     "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "class-methods-use-this": "off",
+    "consistent-return": "off"
   }
 }
