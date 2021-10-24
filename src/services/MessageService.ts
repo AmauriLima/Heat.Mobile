@@ -7,6 +7,10 @@ class MessageService {
 
     return data;
   }
+
+  async messageSubmit(messageFormatted: string) {
+    await api.post('/message', { message: messageFormatted });
+  }
 }
 
 export default new MessageService();

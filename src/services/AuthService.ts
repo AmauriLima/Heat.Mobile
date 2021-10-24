@@ -26,9 +26,9 @@ class AuthService {
 
     const { user, token } = data;
 
-    api.defaults.headers.common.Authorization = `Bearer ${token};`;
+    api.defaults.headers.common.Authorization = `Bearer ${token}`;
     await AsyncStorage.setItem(USER_STORAGE, JSON.stringify(user));
-    await AsyncStorage.setItem(TOKEN_STORAGE, JSON.stringify(token));
+    await AsyncStorage.setItem(TOKEN_STORAGE, token);
 
     return data;
   }
@@ -43,8 +43,9 @@ class AuthService {
     const tokenStorage = await AsyncStorage.getItem(TOKEN_STORAGE);
 
     if (userStorage && tokenStorage) {
-      api.defaults.headers.common.authorization = `Bearer ${tokenStorage}`;
-      return JSON.parse(userStorage);
+      api.defaults.headers.common.Authorization = `Bearer ${tokenStorage}`;
+      const json = await JSON.parse(userStorage);
+      return json;
     }
   }
 }
