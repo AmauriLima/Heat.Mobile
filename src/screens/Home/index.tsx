@@ -1,5 +1,5 @@
-import React from 'react';
 import { KeyboardAvoidingView, Platform } from 'react-native';
+import React from 'react';
 
 import Header from '../../components/Header';
 import MessageList from '../../components/MessageList';
